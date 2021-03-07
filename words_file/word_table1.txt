@@ -1,2 +1,2 @@
-semester,set a goal  ,according to,stick to        ,author 
-학기    ,목표를 세우다,~에 따르면   ,~을 계속 유지하다,작가 
+semester,set a goal  ,according to,stick to        ,author,fascinated,creative,unfortunate,break free from,confident,have an influence on,merchant,era,restriction,destiny,make a fortune
+학기    ,목표를 세우다,~에 따르면   ,~을 계속 유지하다,작가   ,매료된    ,창의적인 ,불행한      ,...에서 벗어나다,확신하는,...에 영향을 끼치다,상인,        시대,제한,  운명        ,돈을 벌다

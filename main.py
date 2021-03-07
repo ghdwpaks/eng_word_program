@@ -84,15 +84,17 @@ def check_right(userans,  pronum ,words,show_ans=0) :
             break
     if right_ans_count >= len(right_ans) and len(userans) == len(right_ans) :
         ps = True
-        if show_ans == 1 :
+        if show_ans == 0 :
             print("맞았습니다!")
+            os.system("pause")
     else :
-        if show_ans == 1 :
+        if show_ans == 0 :
             print("정답은 {}입니다.".format(words[pronum].strip()))
+            os.system("pause")
         ps = False
     return ps
 
-def test_words(path,eng_or_kor,show_ans=0) :
+def test_words(path,eng_or_kor,show_ans=1) :
     wrong_ans = []
     correct_count = 0
     f = open(path,'rt',encoding='UTF8')
@@ -110,11 +112,13 @@ def test_words(path,eng_or_kor,show_ans=0) :
         show_words = kor_words
 
     for i in range(0,len(right_words)) :
+        os.system("cls")
         userans_word = input("{}\n>>".format(show_words[i]))
         if check_right(userans_word,i,right_words,show_ans) :
             correct_count += 1
         else :
             wrong_ans.append(i)
+    os.system("cls")
     print("맞은 갯수는 {}개 입니다!".format(correct_count))
     print("틀린문제는",end="")
     if len(wrong_ans) <= 0 :
@@ -124,7 +128,7 @@ def test_words(path,eng_or_kor,show_ans=0) :
         for i in range(0,len(wrong_ans)) :
             print("{}번의 '{}'".format(wrong_ans[i]+1,right_words[wrong_ans[i]].strip()))
         print("들이 있습니다.")
-
+    os.system("pause")
     
         
 
@@ -133,14 +137,15 @@ def test_words(path,eng_or_kor,show_ans=0) :
 
 
 print("Hello world!")
+
 while True :
-    
+    os.system("cls")
     path = ''
     print("현재 시험 가능 과목은 1과 입니다.")
     userans_check_unit = get_int("몇과를 시험볼건지 정해주세요. >>")
 
     userans_check_language = get_int("영어를 입력할거면 0, 한글을 입력할거면 1. >>")
-    show_ans = get_int("틀린 답을 바로 공개할거면 1, 아니면 0. >>")
+    show_ans = get_int("틀린 답을 바로 공개할거면 0, 아니면 1. >>")
     if userans_check_language == 1 or userans_check_language == 0 :
         if userans_check_unit == 1 :
             path = './words_file/word_table1.txt'
