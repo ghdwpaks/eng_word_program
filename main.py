@@ -129,7 +129,7 @@ def test_words(path,eng_or_kor,show_ans=1) :
             print("{}번의 '{}'".format(wrong_ans[i]+1,right_words[wrong_ans[i]].strip()))
         print("들이 있습니다.")
     os.system("pause")
-    
+     
         
 
 
@@ -141,7 +141,7 @@ print("Hello world!")
 while True :
     os.system("cls")
     path = ''
-    print("현재 시험 가능 과목은 1과 입니다.")
+    print("현재 시험 가능 과목은 1,2 과 입니다.")
     userans_check_unit = get_int("몇과를 시험볼건지 정해주세요. >>")
 
     userans_check_language = get_int("영어를 입력할거면 0, 한글을 입력할거면 1. >>")
@@ -149,6 +149,9 @@ while True :
     if userans_check_language == 1 or userans_check_language == 0 :
         if userans_check_unit == 1 :
             path = './words_file/word_table1.txt'
+            test_words(path,userans_check_language,show_ans)
+        elif userans_check_unit == 2 :
+            path = './words_file/word_table2.txt'
             test_words(path,userans_check_language,show_ans)
         else :
             continue
